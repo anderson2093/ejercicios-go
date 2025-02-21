@@ -13,14 +13,15 @@ var DB *sql.DB
 func ConnectDB() {
 	connStr := "user=anderson password=AmoProgramar dbname=practicadb sslmode=disable"
 	var err error
-	DB, err = sql.Open("postgres", connStr)
+	DB, err = sql.Open("postgres", connStr) // 🔥 AQUÍ ESTABA EL PROBLEMA
+
 	if err != nil {
-		log.Fatal("Error al conectar con la base de datos: ", err)
+		log.Fatal("❌ Error al conectar con la base de datos:", err)
 	}
 
 	if err := DB.Ping(); err != nil {
-		log.Fatal("No se puede hacer ping a la base de datos: ", err)
+		log.Fatal("❌ No se puede hacer ping a la base de datos:", err)
 	}
 
-	fmt.Println("📦 Conectado a PostgreSQL!")
+	fmt.Println("✅ 📦 Conectado a PostgreSQL!")
 }

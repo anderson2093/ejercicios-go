@@ -13,7 +13,7 @@ func InitTables() {
 CREATE TABLE IF NOT EXISTS tasks (
 	id SERIAL PRIMARY KEY,
 	title VARCHAR(255) NOT NULL,
-	description TEXT,
+	description TEXT NOT NULL,
 	created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
 	status VARCHAR(50) NOT NULL DEFAULT 'pending'
 	);`
