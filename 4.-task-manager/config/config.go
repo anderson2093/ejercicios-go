@@ -4,6 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+
+	_ "github.com/lib/pq" // 🔥 IMPORTANTE: Importa el driver de PostgreSQL
 )
 
 var DB *sql.DB
